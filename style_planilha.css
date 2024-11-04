@@ -1,0 +1,66 @@
+/* Estilização da página para se assemelhar à imagem fornecida */
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #5B2C6F; /* Cor roxa */
+    color: #FFFFFF;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #B5651D; /* Cor marrom */
+}
+
+th {
+    background-color: #B5651D;
+    color: #FFFFFF;
+}
+
+
+/* Botões de ação */
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.action-buttons button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    background-color: #5B2C6F; /* Cor roxa */
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.action-buttons button:hover {
+    background-color: #4A235A;
+}

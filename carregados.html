@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylecarregados.css">
+    <title>Cadastro de Motorista</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <div id="form-container">
+            <h1>Cadastro de Planilha</h1>
+            <form id="carregamentosForm">
+
+
+                <label for="data_oc">Data da OC</label>
+                <input type="text" id="data_oc" name="data_oc">
+                
+                <label for="palca">Placa</label>
+                <input type="text" id="placa" name="placa">
+                
+                <label for="tipo_veiculo">Tipo Veículo</label>
+                <input type="text" id="tipo_veiculo" name="tipo_veiculo">
+
+                <label for="peso">Peso</label>
+                <input type="number" id="peso" name="peso">
+
+                <label for="frete_motorista">Frete Motorista</label>
+                <input type="number" id="frete_motorista" name="frete_motorista">
+
+                <label for="emissor">Emissor</label>
+                <input type="text" id="emissor" name="emissor">
+
+                <label for="data_manifesto">Data do Manifesto</label>
+                <input type="number" id="data_manifesto" name="data_manifesto">
+
+                <label for="cte">CTE</label>
+                <input type="text" id="cte" name="cte">
+
+                <label for="data_entrega">Data da Entrega</label>
+                <input type="number" id="data_entrega" name="data_entrega">
+
+                <label for="nfe">NFe</label>
+                <input type="text" id="nfe" name="nfe">
+
+                <label for="observacao">Observação</label>
+                <input type="text" id="observacao" name="observacao">
+
+                
+                
+                <button type="button" id="submitBtn">Adicionar à Planilha</button>
+                <button type="button" id="clearBtn">Limpar</button>
+            </form>
+            <div class="showList"><button id="viewListBtn">Ver Listagem</button></div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDcpggR7jf2BEPNLqRj1Iz368F0dDtD1-4",
+            authDomain: "planilha-8938f.firebaseapp.com",
+            projectId: "planilha-8938f",
+            storageBucket: "planilha-8938f.appspot.com",
+            messagingSenderId: "211015132743",
+            appId: "1:211015132743:web:45f443dc9e65b72fe37362"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const carregados = firebase.firestore();
+    </script>
+
+    <script src="carregados.js"></script>
+</body>
+</html>

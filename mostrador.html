@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Fretes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Listagem de Fretes</h1>
+        <button onclick="reloadFretes()">Atualizar Lista de Fretes</button>
+        <table id="fretesTable">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Expedidor</th>
+                    <th>Destinatário</th>
+                    <th>Recebedor</th>
+                    <th>Cidade Origem</th>
+                    <th>Cidade Destino</th>
+                    <th>Produto</th>
+                    <th>Qtd. Liberada</th>
+                    <th>Marcado</th>
+                    <th>Saldo</th>
+                    <th>Espécie</th>
+                    <th>Frete Empresa</th>
+                    <th>Frete Motorista</th>
+                    <th>Pedido</th>
+                    <th>Operação</th>
+                    <th>Lote</th>
+                    <th>Observação 1</th>
+                    <th>Observação 2</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os dados serão inseridos aqui pelo JavaScript -->
+            </tbody>
+        </table>
+        <button onclick="window.location.href='adicionar_frete.html'">Adicionar Fretes</button>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="firebaseConfig.js"></script>
+    <script src="mostrador.js"></script>
+</body>
+</html>

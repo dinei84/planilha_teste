@@ -1,0 +1,25 @@
+<!-- adicionar_carga.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Carga</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Adicionar Carga</h1>
+        <form id="adicionarCargaForm">
+            <label for="idFrete">ID do Frete:</label>
+            <input type="text" id="idFrete" name="idFrete" required>
+            <label for="pesoCarga">Peso da Carga:</label>
+            <input type="number" id="pesoCarga" name="pesoCarga" required>
+            <button type="button" onclick="handleAdicionarCarga()">Adicionar Carga</button>
+        </form>
+    </div>
+
+    <script src="js/firebaseConfig.js"></script>
+    <script src="js/cargas.js"></script>
+</body>
+</html>

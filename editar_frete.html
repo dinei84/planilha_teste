@@ -68,12 +68,38 @@
             <!-- Adicione outros campos conforme necessário -->
 
             <button id="submitBtn" type="button" onclick="salvarFrete()">Salvar Alterações</button>
+
+            <div class="table-container">
+                <table id="carregamentosTable">
+                    <thead>
+                        <tr>
+                            <th>Data OC</th>
+                            <th>Placa</th>
+                            <th>Motorista</th>
+                            <th>Tipo Veículo</th>
+                            <th>Peso</th>
+                            <th>Frete Motorista</th>
+                            <th>Emissor</th>
+                            <th>Data Manifesto</th>
+                            <th>CTE</th>
+                            <th>Data Entrega</th>
+                            <th>NFe</th>
+                            <th>Observação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Linhas de dados inseridas dinamicamente pelo JavaScript -->
+                    </tbody>
+                </table>
+            </div>
         </form>
+        <a href="charger.html"><button type="button">Adicionar carregamento</button></a> 
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
     <script src="firebaseConfig.js"></script>  
     <script src="editar_frete.js"></script>
+    
 </body>
 </html>

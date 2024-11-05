@@ -1,5 +1,5 @@
-const fretes = firebase.firestore();
-const headerDocId = "carregados"; // Substitua pelo ID correto
+const db = firebase.firestore();
+const carregados = "carregados"; // Substitua pelo ID correto
 
 async function carregarCabecalho() {
     console.log("Carregando cabeçalho com docId:", headerDocId);

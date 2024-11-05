@@ -1,0 +1,116 @@
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Esconder o título h1 */
+h1 {
+    display: none;
+}
+
+/* Estilo do formulário */
+#freteForm {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #000;
+    background-color: #fff;
+    /* padding: 5px; */
+}
+
+/* Estilos gerais para labels e inputs */
+#freteForm label,
+#freteForm input {
+    padding: 4px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+/* Atualização: Labels específicos com cor alternativa */
+#freteForm label[for="cliente"],
+#freteForm label[for="expedidor"],
+#freteForm label[for="destinatario"],
+#freteForm label[for="recebedor"] {
+    background-color: #0073e6; /* Azul escuro para destaque */
+    color: white;
+}
+
+/* Atualização: Input com fundo verde claro */
+#freteForm input {
+    border: 1px solid #ccc;
+    background-color: #ccffcc; /* Verde claro */
+    flex: 1 1 150px;
+}
+
+/* Pairing Cliente & Expedidor, Destinatario & Recebedor */
+.cliente-expedidor, .destinatario-recebedor {
+    display: flex;
+    flex: 1 1 100%;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#cliente, #expedidor, #destinatario, #recebedor {
+    flex: 1 1 50%;
+}
+
+/* Campos de texto */
+#freteForm input[type="text"],
+#freteForm input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Destaque para campos importantes */
+#pedido {
+    background-color: #FFFF00;
+}
+
+/* Botão de salvar */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Organização para blocos que ocupam uma coluna */
+.single-column {
+    flex: 1 1 50%;
+}
+
+/* Alinhamento específico de cidades */
+#cidade_origem,
+#cidade_destino {
+    flex: 1 1 45%;
+    margin-right: 5%;
+}
+
+#cidade_destino {
+    margin-right: 0;
+}
+
+/* Campos individuais que ocupam uma coluna */
+#produto,
+#qtd_liberada,
+#marcado,
+#saldo,
+#especie,
+#frete_empresa,
+#frete_motorista,
+#pedido,
+#operacao,
+#lote,
+#observacao1,
+#observacao2 {
+    flex: 1 1 100px;
+}

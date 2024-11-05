@@ -1,6 +1,8 @@
-const fretes = firebase.firestore();
-const fretesCollection = fretes.collection("fretes");
+// Inicializar a coleção do Firestore
+const db = firebase.firestore();
+const fretesCollection = db.collection("fretes");
 
+// Evento de clique no botão para salvar as alterações
 document.getElementById("submitBtn").addEventListener("click", async () => {
     const cliente = document.getElementById("cliente").value;
     const expedidor = document.getElementById("expedidor").value;
@@ -21,11 +23,13 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     const observacao1 = document.getElementById("observacao1").value;
     const observacao2 = document.getElementById("observacao2").value;
 
+    // Recupera o ID do documento armazenado para edição
     const docId = sessionStorage.getItem("editDocId");
 
     try {
         if (docId) {
-            await fretes.collection("fretes").doc(docId).update({
+            // Atualiza o documento existente
+            await fretesCollection.doc(docId).update({
                 cliente,
                 expedidor,
                 destinatario,
@@ -46,9 +50,12 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
                 observacao2
             });
             alert("Dados atualizados com sucesso!");
+            console.log("Salvando com o ID do documento:", docId);
+
             sessionStorage.removeItem("editDocId");
         } else {
-            await fretes.collection("fretes").add({
+            // Adiciona um novo documento
+            await fretesCollection.add({
                 cliente,
                 expedidor,
                 destinatario,
@@ -69,8 +76,11 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
                 observacao2,
                 createdAt: firebase.firestore.FieldValue.serverTimestamp()
             });
+            console.log("Novo documento adicionado");
             alert("Dados adicionados com sucesso!");
         }
+
+        // Reseta o formulário e redireciona
         document.getElementById("planilhaForm").reset();
         window.location.href = "mostrador.html";
     } catch (error) {
@@ -79,12 +89,13 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     }
 });
 
+// Função para carregar os dados do frete para edição
 async function loadFreteDataForEditing() {
     const docId = sessionStorage.getItem("editDocId");
 
     if (docId) {
         try {
-            const doc = await fretes.collection("fretes").doc(docId).get();
+            const doc = await fretesCollection.doc(docId).get();
             if (doc.exists) {
                 const data = doc.data();
                 document.getElementById("cliente").value = data.cliente || "";
@@ -111,17 +122,22 @@ async function loadFreteDataForEditing() {
         } catch (error) {
             console.error("Erro ao buscar dados para edição:", error);
         }
+    } else {
+        console.log("Nenhum ID encontrado na sessionStorage para edição.");
     }
 }
 
-async function LoadingFreteForDelete(){
-    await fretes.collection('fretes').doc(id).delete()
-    fretes = fretes.filter(driver => fretes.id !== id)
-    sortAndRenderTable()
-
-
-    
+// Função de exclusão (não utilizada diretamente neste código, mas deixei corrigida para referência)
+async function deleteFrete(docId) {
+    try {
+        await fretesCollection.doc(docId).delete();
+        console.log("Frete excluído com sucesso:", docId);
+        alert("Frete excluído com sucesso!");
+    } catch (error) {
+        console.error("Erro ao excluir o frete:", error);
+        alert("Erro ao excluir o frete.");
+    }
 }
 
-
+// Carrega os dados ao carregar a página
 window.onload = loadFreteDataForEditing;

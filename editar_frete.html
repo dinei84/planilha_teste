@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Frete</title>
+    <link rel="stylesheet" href="editar.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Frete</h1>
+        <form id="freteForm">
+            <!-- Campos para edição do frete -->
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" name="cliente"><br>
+
+            <label for="expedidor">Expedidor:</label>
+            <input type="text" id="expedidor" name="expedidor"><br>
+
+            <label for="destinatario">Destinatário</label>
+            <input type="text" id="destinatario" name="destinatario">
+
+            <label for="recebedor">Recebedor</label>
+            <input type="text" id="recebedor" name="recebedor">
+
+            <label for="cidade_origem">Cidade Origem</label>
+            <input type="text" id="cidade_origem" name="cidade_origem">
+
+            <label for="cidade_destino">Cidade Destino</label>
+            <input type="text" id="cidade_destino" name="cidade_destino">
+
+            <label for="produto">Produto</label>
+            <input type="text" id="produto" name="produto">
+
+            <label for="qtd_liberada">Quantidade Liberada</label>
+            <input type="number" id="qtd_liberada" name="qtd_liberada">
+
+            <label for="marcado">Marcado</label>
+            <input type="number" id="marcado" name="marcado">
+
+            <label for="saldo">Saldo</label>
+            <input type="number" id="saldo" name="saldo">
+
+            <label for="especie">Espécie</label>
+            <input type="text" id="especie" name="especie">
+
+            <label for="frete_empresa">Frete Empresa</label>
+            <input type="number" id="frete_empresa" name="frete_empresa">
+
+            <label for="frete_motorista">Frete Motorista</label>
+            <input type="number" id="frete_motorista" name="frete_motorista">
+
+            <label for="pedido">Pedido</label>
+            <input type="text" id="pedido" name="pedido">
+
+            <label for="operacao">Operação</label>
+            <input type="number" id="operacao" name="operacao">
+
+            <label for="lote">Lote</label>
+            <input type="text" id="lote" name="lote">
+
+            <label for="observacao1">Observação 1</label>
+            <input type="text" id="observacao1" name="observacao1">
+
+            <label for="observacao2">Observação 2</label>
+            <input type="text" id="observacao2" name="observacao2">
+
+            <!-- Adicione outros campos conforme necessário -->
+
+            <button type="button" onclick="salvarFrete()">Salvar Alterações</button>
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="firebaseConfig.js"></script>  
+    <script src="editar_frete.js"></script>
+</body>
+</html>

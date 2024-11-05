@@ -1,6 +1,6 @@
 async function fetchFretes() {
     try {
-        const fretesCollection = db.collection("fretes");
+        const fretesCollection = fretes.collection("fretes");
         const fretesSnapshot = await fretesCollection.orderBy("createdAt", "desc").get();
         const fretesTableBody = document.querySelector("#fretesTable tbody");
         fretesTableBody.innerHTML = "";
@@ -50,7 +50,7 @@ function editRow(button) {
     const docId = row.getAttribute("data-id");
 
     sessionStorage.setItem("editDocId", docId);
-    window.location.href = "adicionar_frete.html";
+    window.location.href = "editar_frete.html";
 }
 
 async function deleteRow(button) {

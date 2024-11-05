@@ -46,12 +46,23 @@ async function fetchFretes() {
 }
 
 function editRow(button) {
+    // Obter a linha da tabela onde o botão foi clicado
     const row = button.parentNode.parentNode;
+    // Obter o ID do frete a partir do atributo 'data-id' da linha
     const docId = row.getAttribute("data-id");
 
-    sessionStorage.setItem("editDocId", docId);
-    window.location.href = "editar_frete.html";
+    if (docId) {
+        // Armazenar o ID no sessionStorage para usar na próxima página
+        sessionStorage.setItem("editDocId", docId);
+        console.log("ID do frete salvo no sessionStorage para edição:", docId);  // Log para verificação
+
+        // Redirecionar para a página de edição
+        window.location.href = "editar_frete.html";
+    } else {
+        alert("ID do frete não encontrado.");
+    }
 }
+
 
 async function deleteRow(button) {
     const confirmation = confirm("Você tem certeza que deseja excluir este frete?");
